@@ -1,0 +1,12 @@
+o Need to correctly rotate the images... can do this ahead of time
+using the jhead command (installable in linux).  This can be done one 
+time to make the image match the exif orientation, and then strip the
+exif orientation info (so more advanced programs don't attempt to apply
+an additional rotation to an already-fixed image)
+o Setting the image dimensions the same isn't working .... some images that 
+are portrait instead of landscape, or that have odd dimensions, get stretched.
+Instead, need to figure out which dimension needs to get scale, and then
+scale uniformly.  Either we preprocess images (could do, since we make
+a list of them anyway...) or we process them on the fly and display in a
+canvas or something.
+

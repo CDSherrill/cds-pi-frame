@@ -12,7 +12,7 @@ import os
 top_dir = '/SynDS/photo/'
 # look in these subdirectories of top_dir
 # subdirs = ['2017', '2016', '2015', '2014']
-subdirs = ['2017']
+subdirs = ['2016']
 # filename must end in one of these suffixes
 suffixes = ['.jpg', '.JPG', '.gif', '.GIF', '.png', '.PNG']
 # exclude any file that has these substrings
