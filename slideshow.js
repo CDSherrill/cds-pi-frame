@@ -38,7 +38,7 @@ function updateMainImage() {
 }
 
 function srcLine(filename) {
-  return '<img src="' + filename + '" width="788" height="458" />';
+  return '<img src="' + filename + '" />';
 }
 
 
