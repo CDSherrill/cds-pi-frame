@@ -37,7 +37,7 @@ function updateMainImage() {
   var theImage = new Image();
   theImage.src = Slides[whichSlide];
   theImage.onload = function() {
-    context.fillStyle = "black";
+    context.fillStyle = "white";
     context.fillRect(0,0,canvas.width,canvas.height);
     var nw = theImage.naturalWidth;
     var nh = theImage.naturalHeight;
