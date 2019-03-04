@@ -2,16 +2,36 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <!-- Style to get a black border around the kiosk window -->
+  <!-- None of this is working... -->
   <style>
+    <!--
     canvas {
-      border: 1px solid white;
+      border: 0px solid black;
+    }
+    -->
+    html {
+      background-color: #ffffff;
+    }
+    #container:fullscreen {
+      background-color: rgba(0,0,0,0);
+    }
+    #container:-webkit-fullscreen {
+      background-color: rgba(0,0,0,0);
+    }
+    #container:-moz-fullscreen {
+      background-color: rgba(0,0,0,0);
     }
   </style>
+  <script>setTimeout(function(){window.location.href='trafficmap.html'},20000);</script>
   <script src="slidelist.js"></script>
   <script src="canvas-slideshow.js"></script>
 </head>
 <body>
 <canvas id="mainimage" width="788" height="458"></canvas>
+<!--
+<canvas id="mainimage" width="800" height="460"></canvas>
+-->
 </body>
 </html>
 

@@ -32,10 +32,10 @@ outfilename = args.pop(0)
 if (infilename == outfilename):
   sys.exit("Error: Input and output file are same")
 
-print("Converting file {:} to size {:}x{:} in new file {:}".format(infilename, max_width, max_height, outfilename))
+#print("Converting file {:} to size {:}x{:} in new file {:}".format(infilename, max_width, max_height, outfilename))
 
 command = "convert {:} -auto-orient -resize {:}x{:} {:}".format(infilename, max_width, max_height, outfilename)
 
-print(command)
+#print(command)
 os.system(command)
  
