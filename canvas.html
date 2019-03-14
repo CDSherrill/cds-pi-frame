@@ -5,14 +5,13 @@
   <!-- Style to get a black border around the kiosk window -->
   <!-- None of this is working... -->
   <style>
-    <!--
     canvas {
       border: 0px solid black;
     }
-    -->
     html {
-      background-color: #ffffff;
+      background-color: #000000;
     }
+    body {overflow: hidden;}
     #container:fullscreen {
       background-color: rgba(0,0,0,0);
     }
@@ -23,15 +22,12 @@
       background-color: rgba(0,0,0,0);
     }
   </style>
-  <script>setTimeout(function(){window.location.href='trafficmap.html'},20000);</script>
+  <script>setTimeout(function(){window.location.href='trafficmap.html'},80000);</script>
   <script src="slidelist.js"></script>
   <script src="canvas-slideshow.js"></script>
 </head>
 <body>
-<canvas id="mainimage" width="788" height="458"></canvas>
-<!--
 <canvas id="mainimage" width="800" height="460"></canvas>
--->
 </body>
 </html>
 

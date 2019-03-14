@@ -10,8 +10,8 @@ import os
 import pathlib
 
 # max width and height of downsized pics
-max_width = 788
-max_height = 458
+max_width = 800
+max_height = 460
 
 # top-level dir to find the source pics...include trailing slash
 top_src_dir = '/mnt/photo/'
@@ -51,9 +51,10 @@ for src_subdir in src_subdirs:
                 else:
                     full_dst_name = top_dst_dir + src_rel_name
                 if os.path.exists(full_dst_name):
+                  print("{} already exists".format(full_dst_name))
                   continue
                 print("{} -> \n  {}".format(full_src_name, full_dst_name))
-                command = "./resize-pic.py {} {} {} {}".format(full_src_name, max_width, max_height, full_dst_name)
+                command = "./resize-pic.py {} {} {} 7 7 {}".format(full_src_name, max_width, max_height, full_dst_name)
                 # print("command is {}".format(command))
                 os.system(command)
 
