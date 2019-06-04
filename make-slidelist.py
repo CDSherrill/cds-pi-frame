@@ -23,8 +23,9 @@ file_list = []
 for subdir in subdirs:
     dirname = top_dir + subdir;
     for root, dirs, files in os.walk(dirname):
-        for file in files: 
+        for file in sorted(files): 
             if any(exclude in file for exclude in excludes):
+                print("excluding {}".format(os.path.join(root, file)))
                 continue
             if any(file.endswith(suffix) for suffix in suffixes):
                 file_list.append(os.path.join(root, file))

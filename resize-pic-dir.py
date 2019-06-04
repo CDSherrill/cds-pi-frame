@@ -31,7 +31,8 @@ for src_subdir in src_subdirs:
     src_dirname = top_src_dir + src_subdir;
     for root, dirs, files in os.walk(src_dirname):
         for file in files: 
-            if any(exclude in file for exclude in excludes):
+            if any(file.find(exclude) for exclude in excludes):
+                # print("Excluding file {}".format(os.path.join(root, file)))
                 continue
             if any(file.endswith(suffix) for suffix in suffixes):
                 # full path to source file
