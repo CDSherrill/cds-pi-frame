@@ -15,20 +15,22 @@ window.onerror = function (msg, url, lineNo, colunmNo, error) {
 
 window.onload = updateMainImage;
 
-var whichSlide = -1;
-
 // var Slides = ["pics/pic1.jpg", "pics/pic2.jpg"]
-
 // alert("Got this: " + Slides[0] + " " + Slides[1]);
 
 
+var whichSlide;
+// get the last slide number from localStorage
+var lastSlide = localStorage.getItem('slideshow_lastslide');
+if (lastSlide == null) {
+  whichSlide = Math.floor(Math.random()*Slides.length)-1;
+}
+else {
+  whichSlide = parseInt(lastSlide);
+}
+
 function updateMainImage() {
-  if (whichSlide == -1) {
-    whichSlide = Math.floor(Math.random()*Slides.length);
-  }
-  else {
-    whichSlide++;
-  }
+  whichSlide++;
   if (whichSlide >= Slides.length) {
     whichSlide = 0;
   }
@@ -55,6 +57,7 @@ function updateMainImage() {
     }
   };
   setTimeout(updateMainImage, 10000);
+  localStorage.setItem("slideshow_lastslide", whichSlide);
 }
 
 

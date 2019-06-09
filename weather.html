@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <!-- Style to get a black border around the kiosk window -->
+  <!-- None of this is working... -->
+  <style>
+    canvas {
+      border: 0px solid black;
+    }
+    html {
+      background-color: #000000;
+    }
+    body {overflow: hidden;}
+    #container:fullscreen {
+      background-color: rgba(0,0,0,0);
+    }
+    #container:-webkit-fullscreen {
+      background-color: rgba(0,0,0,0);
+    }
+    #container:-moz-fullscreen {
+      background-color: rgba(0,0,0,0);
+    }
+  </style>
+  <script src="traffic-timer.js"></script>
+</head>
+<body>
+
+<iframe src="https://www.meteoblue.com/en/weather/widget/three/mableton_united-states-of-america_4207226?geoloc=fixed&nocurrent=0&noforecast=0&days=7&tempunit=FAHRENHEIT&windunit=MILE_PER_HOUR&layout=image"  frameborder="0" scrolling="NO" allowtransparency="true" sandbox="allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox" style="width: 788px;height: 470px"></iframe><div><!-- DO NOT REMOVE THIS LINK --><a href="https://www.meteoblue.com/en/weather/forecast/week/mableton_united-states-of-america_4207226?utm_source=weather_widget&utm_medium=linkus&utm_content=three&utm_campaign=Weather%2BWidget" target="_blank">meteoblue</a></div>
+
+</body>
+</html>
+
