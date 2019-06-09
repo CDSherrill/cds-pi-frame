@@ -24,7 +24,6 @@ else {
     trafficEvery = 12;
 }
 
-trafficEvery = 1;
 var iter = 0;
 
 var weatherCount = localStorage.getItem("weatherCount");
