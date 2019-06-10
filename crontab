@@ -1,0 +1,18 @@
+# each evening at 12:30am, scan the photos for any new ones and resize
+30 0 * * * /home/pi/cds-pi-frame/resize-pic-dir.py
+# each evening at 1:30am, make a list of all the photos
+30 1 * * * /home/pi/cds-pi-pframe/make-slidelist.py
+# each weekday morning, turn on pictures at 7:30am
+30 7 * * 1-5 /home/pi/cds-pi-frame/kiosk-on.sh
+# each weekend morning, turn on the pictures at 8:00am
+0 8 * * 0,6 /home/pi/cds-pi-frame/kiosk-on.sh
+# each weekday morning, turn off pictures at 9:30am
+30 9 * * 1-5 /home/pi/cds-pi-frame/kiosk-off.sh
+# on Sunday morning, turn off the pictures at 9:30am
+30 9 * * 0 /home/pi/cds-pi-frame/kiosk-off.sh
+# each weekday evening, turn on the pictures at 5:30pm
+30 17 * * 1-5 /home/pi/cds-pi-frame/kiosk-on.sh
+# on Sunday afternoon, turn on the pictures at 2pm
+0 14 * * 0 /home/pi/cds-pi-frame/kiosk-on.sh
+# every night, turn off pictures at 12am
+0 0 * * * /home/pi/cds-pi-frame/kiosk-off.sh
