@@ -43,17 +43,30 @@ function updateMainImage() {
     context.fillRect(0,0,canvas.width,canvas.height);
     var nw = theImage.naturalWidth;
     var nh = theImage.naturalHeight;
-    var sw = nw / canvas.width;
-    var sh = nh / canvas.height;
-    if (sw >= sh) {
-      fw = canvas.width;
-      fh = Math.floor(nh / sw);
-      context.drawImage(theImage,0,(canvas.height-fh)/2,fw,fh); 
+    var cw = canvas.width;
+    var ch = canvas.height;
+    var sw = nw / cw;
+    var sh = nh / ch;
+    if (nh <= ch && nw <= cw) {
+      var wo = 10; // adjust for un-asked-for left border
+      var x = Math.floor((cw-nw)/2);
+      x = x - wo;
+      if (x < 0) {
+        x = 0;
+      }
+      context.drawImage(theImage,x,(ch-nh)/2,nw,nh);
     }
-    else {
-      fh = canvas.height;
-      fw = Math.floor(nw / sh);
-      context.drawImage(theImage,(canvas.width-fw)/2,0,fw,fh); 
+    else { // need to scale something to fit
+      if (sw >= sh) {
+        fw = canvas.width;
+        fh = Math.floor(nh / sw);
+        context.drawImage(theImage,0,(ch-fh)/2,fw,fh); 
+      }
+      else {
+        fh = canvas.height;
+        fw = Math.floor(nw / sh);
+        context.drawImage(theImage,(cw-fw)/2,0,fw,fh); 
+      }
     }
   };
   setTimeout(updateMainImage, 10000);
