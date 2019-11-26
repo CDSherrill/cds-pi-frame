@@ -11,8 +11,7 @@ import os
 # do all searching inside this top level dir
 top_dir = '/home/pi/photo/'
 # look in these subdirectories of top_dir
-# subdirs = ['2017', '2016', '2015', '2014']
-subdirs = ['2017', '2016', '2015']
+subdirs = ['2019', '2018', '2017', '2016', '2015', '2014']
 # filename must end in one of these suffixes
 suffixes = ['.jpg', '.JPG', '.gif', '.GIF', '.png', '.PNG']
 # exclude any file that has these substrings

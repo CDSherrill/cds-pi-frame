@@ -11,14 +11,15 @@ import pathlib
 
 # max width and height of downsized pics
 max_width = 800
-max_height = 460
+max_height = 480
 # RPi touchscreen is 800x480 pixels in 155x86mm
 pixel_ratio = (800.0/155.0) / (480.0 / 86.0)
 
 # top-level dir to find the source pics...include trailing slash
 top_src_dir = '/mnt/photo/'
 # look in these subdirectories of top_src_dir
-src_subdirs = ['2017', '2016', '2015']
+src_subdirs = ['2019', '2018', '2017', '2016', '2015']
+#src_subdirs = ['test']
 
 # top-level dir to put the resized pics
 top_dst_dir = '/home/pi/photo/'
@@ -58,7 +59,7 @@ for src_subdir in src_subdirs:
                   print("{} already exists".format(full_dst_name))
                   continue
                 print("{} -> \n  {}".format(full_src_name, full_dst_name))
-                command = "./resize-pic.py {} {} {} {} 7 7 {}".format(full_src_name, max_width, max_height, pixel_ratio, full_dst_name)
-                # print("command is {}".format(command))
+                command = "./resize-pic.py {} {} {} {:.4f} 7 7 {}".format(full_src_name, max_width, max_height, pixel_ratio, full_dst_name)
+                print("command is {}".format(command))
                 os.system(command)
 

@@ -61,7 +61,7 @@ with Image(filename = infilename) as src_img:
     if (src_width > src_height):
         dst_width = max_width
         scale = float(dst_width)/float(src_width)
-        dst_height = int(src_height*scale*pixel_ratio)
+        dst_height = int(src_height*scale/pixel_ratio)
 
         # if downscaled height fits within max_height, rescale and save
         if (dst_height <= max_height):
@@ -90,9 +90,9 @@ with Image(filename = infilename) as src_img:
             src_height = cropped.height
             dst_height = max_height
             scale = float(dst_height)/float(src_height)
-            dst_width = int(src_width*scale/pixel_ratio)
+            dst_width = int(src_width*scale*pixel_ratio)
             src_img.resize(dst_width,dst_height)
-            print("Resized to {}x{}".format(dst_width,dst_height))
+            print("After crop resized to {}x{}".format(dst_width,dst_height))
             src_img.save(filename=outfilename)
         
     # if the pic is taller than wide:
@@ -103,7 +103,7 @@ with Image(filename = infilename) as src_img:
         cropped = src_img[:,top_crop:(src_height-bottom_crop)]
         dst_height = max_height
         scale = float(dst_height)/float(cropped.height)
-        dst_width = int(src_width*scale/pixel_ratio)
+        dst_width = int(src_width*scale*pixel_ratio)
         cropped.resize(dst_width,dst_height)
         cropped.save(filename=outfilename)
 

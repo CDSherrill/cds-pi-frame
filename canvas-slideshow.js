@@ -48,13 +48,7 @@ function updateMainImage() {
     var sw = nw / cw;
     var sh = nh / ch;
     if (nh <= ch && nw <= cw) {
-      var wo = 10; // adjust for un-asked-for left border
-      var x = Math.floor((cw-nw)/2);
-      x = x - wo;
-      if (x < 0) {
-        x = 0;
-      }
-      context.drawImage(theImage,x,(ch-nh)/2,nw,nh);
+      context.drawImage(theImage,(cw-nw)/2,(ch-nh)/2,nw,nh);
     }
     else { // need to scale something to fit
       if (sw >= sh) {
