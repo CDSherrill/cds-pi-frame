@@ -60,6 +60,6 @@ for src_subdir in src_subdirs:
                   continue
                 print("{} -> \n  {}".format(full_src_name, full_dst_name))
                 command = "./resize-pic.py {} {} {} {:.4f} 7 7 {}".format(full_src_name, max_width, max_height, pixel_ratio, full_dst_name)
-                print("command is {}".format(command))
+                # print("command is {}".format(command))
                 os.system(command)
 
